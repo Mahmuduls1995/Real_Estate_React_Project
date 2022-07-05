@@ -11,8 +11,13 @@ const HouseContextProvider = ({ children }) => {
   const [houses, setHouses] = useState(housesData);
   const [country, setCountry] = useState('Location (any)');
   const [countries, setCountries] = useState([]);
+
   const [property, setProperty] = useState('Property type (any)');
   const [properties, setProperties] = useState([]);
+
+  const [year, setYear] = useState('Year Select (any)');
+  const [years, setYears]= useState([]);
+
   const [price, setPrice] = useState('Price range (any)');
   const [loading, setLoading] = useState(false);
 
@@ -30,7 +35,7 @@ const HouseContextProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    // return only countries
+    // return only Properties
     const allProperties = houses.map((house) => {
       return house.type;
     });
@@ -41,6 +46,21 @@ const HouseContextProvider = ({ children }) => {
     // set countries state
     setProperties(uniqueProperties);
   }, []);
+  
+  useEffect(() => {
+    // return only Properties
+    const allYears = houses.map((house) => {
+      return house.year;
+    });
+
+    // remove duplicates
+    const uniqueYears = ['Year Select (any)', ...new Set(allYears)];
+
+    // set countries state
+    setProperties(uniqueYears);
+  }, []);
+
+
 
   const handleClick = () => {
     setLoading(true);
@@ -56,33 +76,41 @@ const HouseContextProvider = ({ children }) => {
 
     const newHouses = housesData.filter((house) => {
       const housePrice = parseInt(house.price);
+
       // all values are selected
       if (
         house.country === country &&
         house.type === property &&
+        house.year === property &&
         housePrice >= minPrice &&
         housePrice <= maxPrice
       ) {
         return house;
       }
       // all values are default
-      if (isDefault(country) && isDefault(property) && isDefault(price)) {
+      if (isDefault(country) && isDefault(property)&& isDefault(year) && isDefault(price)) {
         return house;
       }
       // country is not default
-      if (!isDefault(country) && isDefault(property) && isDefault(price)) {
+      if (!isDefault(country) && isDefault(property)&& isDefault(year) && isDefault(price)) {
         return house.country === country;
       }
       // property is not default
       if (!isDefault(property) && isDefault(country) && isDefault(price)) {
         return house.type === property;
       }
+      // property is not default
+      if (!isDefault(year) && isDefault(country)&& isDefault(property) && isDefault(price)) {
+        return house.year === year;
+      }
+
       // price is not default
       if (!isDefault(price) && isDefault(country) && isDefault(property)) {
         if (housePrice >= minPrice && housePrice <= maxPrice) {
           return house;
         }
       }
+
       // country and property is not default
       if (!isDefault(country) && !isDefault(property) && isDefault(price)) {
         return house.country === country && house.type === property;
@@ -93,6 +121,7 @@ const HouseContextProvider = ({ children }) => {
           return house.country === country;
         }
       }
+
       // property and price is not default
       if (isDefault(country) && !isDefault(property) && !isDefault(price)) {
         if (housePrice >= minPrice && housePrice <= maxPrice) {
@@ -100,6 +129,7 @@ const HouseContextProvider = ({ children }) => {
         }
       }
     });
+    
     
     setTimeout(() => {
       return (

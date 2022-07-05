@@ -1,15 +1,13 @@
 import React, { useState, useContext } from 'react';
 // import icons
-import { RiMapPinLine, RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
+import { RiHome5Line, RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
 // import headless ui components
 import { Menu } from '@headlessui/react';
 // import context
 import { HouseContext } from './HouseContext';
 
-
-
-const CountryDropdown = () => {
-  const { country, setCountry, countries } = useContext(HouseContext);
+const PropertyDropdown = () => {
+  const { property, setProperty, properties } = useContext(HouseContext);
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Menu as='div' className='dropdown relative'>
@@ -17,10 +15,12 @@ const CountryDropdown = () => {
         onClick={() => setIsOpen(!isOpen)}
         className='dropdown-btn w-full text-left'
       >
-        <RiMapPinLine className='dropdown-icon-primary' />
+        <RiHome5Line className='dropdown-icon-primary' />
         <div>
-          <div className='text-[15px] font-medium leading-tight'>{country}</div>
-          <div className='text-[13px]'>Select your place</div>
+          <div className='text-[15px] font-medium leading-tight'>
+            {property}
+          </div>
+          <div className='text-[13px]'>Choose property type</div>
         </div>
         {isOpen ? (
           <RiArrowUpSLine className='dropdown-icon-secondary' />
@@ -30,15 +30,15 @@ const CountryDropdown = () => {
       </Menu.Button>
 
       <Menu.Items className='dropdown-menu'>
-        {countries.map((country, index) => {
+        {properties.map((property, index) => {
           return (
             <Menu.Item
               as='li'
-              onClick={() => setCountry(country)}
+              onClick={() => setProperty(property)}
               key={index}
               className='cursor-pointer hover:text-violet-700 transition'
             >
-              {country}
+              {property}
             </Menu.Item>
           );
         })}
@@ -47,4 +47,4 @@ const CountryDropdown = () => {
   );
 };
 
-export default CountryDropdown;
+export default PropertyDropdown;

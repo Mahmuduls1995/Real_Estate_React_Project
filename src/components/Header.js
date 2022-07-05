@@ -1,16 +1,21 @@
+
 import React from 'react';
+
 
 // import link
 import { Link } from 'react-router-dom';
 // import logo
-import Logo from '../assets/img/logo.svg';
+import Logo from '../assets/img/Estatery.jpg';
+
+import Example from './HeaderDropdown';
 
 const Header = () => {
   return (
-    <header className='py-6 mb-12 border-b'>
+    <header className='py-5 mb-12 border-b'>
       <div className='container mx-auto flex  justify-between items-center'>
         <Link to='/'>
-          <img src={Logo} alt='' />
+          <img  className='rounded-md' src={Logo} alt='' />
+       
         </Link>
 
 
@@ -21,9 +26,25 @@ const Header = () => {
           <Link className='mx-4 text-xl' to='/'>
             Buy
           </Link>
+          
           <Link className='mx-4 text-xl' to='/'>
             Sell
           </Link>
+
+
+
+          <Link className='' to='/'>
+          
+          <div>
+           <Example></Example>
+
+          </div>
+
+          </Link>
+
+          
+
+
 
         </div>
 
