@@ -10,7 +10,6 @@ const House = ({ house }) => {
       data-aos-offset="300"
       data-aos-delay="50"
       data-aos-duration="2000"
-
       className='bg-white shadow-1 p-5 rounded-lg  w-full max-w-[352px] mx-auto cursor-pointer hover:shadow-2xl transition'>
       <img className='mb-8'
         data-aos="zoom-in-up"

@@ -68,7 +68,7 @@ export const housesData = [
     bedrooms: '6',
     bathrooms: '3',
     surface: '4200 sq ft',
-    year: '2016-05-03',
+    year: '2016',
     price: '110000',
     agent: {
       image: Agent1,
@@ -89,7 +89,7 @@ export const housesData = [
     bedrooms: '6',
     bathrooms: '3',
     surface: '4200 sq ft',
-    year: '2016-13-05',
+    year: '2016',
     price: '140000',
     agent: {
       image: Agent2,
@@ -110,7 +110,7 @@ export const housesData = [
     bedrooms: '6',
     bathrooms: '3',
     surface: '4200 sq ft',
-    year: '2016-24-07',
+    year: '2016',
     price: '170000',
     agent: {
       image: Agent3,
@@ -131,7 +131,7 @@ export const housesData = [
     bedrooms: '6',
     bathrooms: '3',
     surface: '4200 sq ft',
-    year: '2016-28-08',
+    year: '2016',
     price: '200000',
     agent: {
       image: Agent4,
@@ -152,7 +152,7 @@ export const housesData = [
     bedrooms: '5',
     bathrooms: '3',
     surface: '4200 sq ft',
-    year: '2015-15-01',
+    year: '2015',
     price: '210000',
     agent: {
       image: Agent5,
@@ -173,7 +173,7 @@ export const housesData = [
     bedrooms: '6',
     bathrooms: '3',
     surface: '6200 sq ft',
-    year: '2014-19-11',
+    year: '2014',
     price: '220000',
     agent: {
       image: Agent6,
@@ -194,7 +194,7 @@ export const housesData = [
     bedrooms: '2',
     bathrooms: '1',
     surface: '1200 sq ft',
-    year: '2012-20-05',
+    year: '2012',
     price: '20000',
     agent: {
       image: Agent7,
@@ -215,7 +215,7 @@ export const housesData = [
     bedrooms: '3',
     bathrooms: '1',
     surface: '1000 sq ft',
-    year: '2011-22-12',
+    year: '2011',
     price: '30000',
     agent: {
       image: Agent8,
@@ -236,7 +236,7 @@ export const housesData = [
     bedrooms: '2',
     bathrooms: '1',
     surface: '1100 sq ft',
-    year: '2011-23-09',
+    year: '2011',
     price: '40000',
     agent: {
       image: Agent9,
@@ -257,7 +257,7 @@ export const housesData = [
     bedrooms: '5',
     bathrooms: '3',
     surface: '3200 sq ft',
-    year: '2015-12-01',
+    year: '2015',
     price: '117000',
     agent: {
       image: Agent10,
@@ -278,7 +278,7 @@ export const housesData = [
     bedrooms: '7',
     bathrooms: '2',
     surface: '2200 sq ft',
-    year: '2019-25-09',
+    year: '2019',
     price: '145000',
     agent: {
       image: Agent11,
@@ -299,7 +299,7 @@ export const housesData = [
     bedrooms: '4',
     bathrooms: '4',
     surface: '4600 sq ft',
-    year: '2015-11-01',
+    year: '2015',
     price: '139000',
     agent: {
       image: Agent12,
@@ -320,7 +320,7 @@ export const housesData = [
     bedrooms: '5',
     bathrooms: '2',
     surface: '5200 sq ft',
-    year: '2014-10-10',
+    year: '2014',
     price: '180000',
     agent: {
       image: Agent1,
@@ -341,7 +341,7 @@ export const housesData = [
     bedrooms: '5',
     bathrooms: '2',
     surface: '3200 sq ft',
-    year: '2011-23-03',
+    year: '2011',
     price: '213000',
     agent: {
       image: Agent2,
@@ -362,7 +362,7 @@ export const housesData = [
     bedrooms: '4',
     bathrooms: '3',
     surface: '5200 sq ft',
-    year: '2013-28-02',
+    year: '2013',
     price: '221000',
     agent: {
       image: Agent3,
@@ -383,7 +383,7 @@ export const housesData = [
     bedrooms: '2',
     bathrooms: '1',
     surface: '1300 sq ft',
-    year: '2011-16-12',
+    year: '2011',
     price: '21000',
     agent: {
       image: Agent4,
@@ -404,7 +404,7 @@ export const housesData = [
     bedrooms: '3',
     bathrooms: '1',
     surface: '1000 sq ft',
-    year: '2012-23-07',
+    year: '2012',
     price: '32000',
     agent: {
       image: Agent5,
@@ -425,7 +425,7 @@ export const housesData = [
     bedrooms: '3',
     bathrooms: '1',
     surface: '1200 sq ft',
-    year: '2010-23-09',
+    year: '2010',
     price: '38000',
     agent: {
       image: Agent6,
