@@ -13,10 +13,10 @@ const HouseContextProvider = ({ children }) => {
     const [country, setCountry] = useState('Location (any)');
     const [countries, setCountries] = useState([]);
 
-    const [property, setProperty] = useState('Property type (any)');
+    const [property, setProperty] = useState('Property type');
     const [properties, setProperties] = useState([]);
 
-    const [year, setYear] = useState('Year Select (any)');
+    const [year, setYear] = useState('Date Select (any)');
     const [years, setYears] = useState([]);
 
     const [price, setPrice] = useState('Price range (any)');

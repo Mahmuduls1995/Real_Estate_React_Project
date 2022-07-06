@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 // import icons
-import { RiHome5Line, RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
+import { RiCalendarLine, RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
 // import headless ui components
 import { Menu } from '@headlessui/react';
 // import context
@@ -15,7 +15,7 @@ const YearDropdown = () => {
         onClick={() => setIsOpen(!isOpen)}
         className='dropdown-btn w-full text-left'
       >
-        <RiHome5Line className='dropdown-icon-primary' />
+        <RiCalendarLine className='dropdown-icon-primary' />
         <div>
           <div className='text-[15px] font-medium leading-tight'>
             {year}
