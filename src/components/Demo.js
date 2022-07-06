@@ -16,9 +16,6 @@ const HouseContextProvider = ({ children }) => {
     const [property, setProperty] = useState('Property type (any)');
     const [properties, setProperties] = useState([]);
 
-    const [year, setYear] = useState('Year Select (any)');
-    const [years, setYears] = useState([]);
-
     const [price, setPrice] = useState('Price range (any)');
     const [loading, setLoading] = useState(false);
 
@@ -49,20 +46,6 @@ const HouseContextProvider = ({ children }) => {
     }, []);
 
 
-    useEffect(() => {
-        // return only Properties
-        const allYears = houses.map((house) => {
-            return house.year;
-        });
-
-        // remove duplicates
-        const uniqueYears = ['Year Select (any)', ...new Set(allYears)];
-
-        // set countries state
-        setYears(uniqueYears);
-    }, []);
-
-
 
 
     const handleClick = () => {
@@ -84,7 +67,6 @@ const HouseContextProvider = ({ children }) => {
             if (
                 house.country === country &&
                 house.type === property &&
-                house.year === year &&
                 housePrice >= minPrice &&
                 housePrice <= maxPrice
             ) {
@@ -95,20 +77,16 @@ const HouseContextProvider = ({ children }) => {
                 return house;
             }
             // country is not default
-            if (!isDefault(country) && isDefault(property) && isDefault(year) && isDefault(price)) {
+            if (!isDefault(country) && isDefault(property) && isDefault(price)) {
                 return house.country === country;
             }
             // property is not default
-            if (!isDefault(property) && isDefault(country) && isDefault(year) && isDefault(price)) {
+            if (!isDefault(property) && isDefault(country) && isDefault(price)) {
                 return house.type === property;
-            }
-            // year is not default
-            if (!isDefault(year) && isDefault(country) && isDefault(property) && isDefault(price)) {
-                return house.year === year;
             }
 
             // price is not default
-            if (!isDefault(price) && isDefault(country) && isDefault(property)&& isDefault(year)) {
+            if (!isDefault(price) && isDefault(country) && isDefault(property)) {
                 if (housePrice >= minPrice && housePrice <= maxPrice) {
                     return house;
                 }
@@ -116,43 +94,24 @@ const HouseContextProvider = ({ children }) => {
 
 
             // country and property is not default
-            if (!isDefault(country) && !isDefault(property) && isDefault(price)&& isDefault(year)) {
+            if (!isDefault(country) && !isDefault(property) && isDefault(price)) {
                 return house.country === country && house.type === property;
             }
 
-            // year and property is not default
-            if (!isDefault(year) && !isDefault(property) && isDefault(price)&& isDefault(country)) {
-                return house.year === year && house.type === property;
-            }
-
-            // year and country is not default
-            if (!isDefault(year) && !isDefault(country) && isDefault(property) && isDefault(price)) {
-                return house.year === year && house.country === country;
-            }
-
-
             // country and price is not default
-            if (!isDefault(country) && isDefault(property) && !isDefault(price)&& isDefault(year)) {
+            if (!isDefault(country) && isDefault(property) && !isDefault(price)) {
                 if (housePrice >= minPrice && housePrice <= maxPrice) {
                     return house.country === country;
-                }
-            }
-            // year and price is not default
-            if (!isDefault(price)&& !isDefault(year) && isDefault(country) && isDefault(property) ) {
-                if (housePrice >= minPrice && housePrice <= maxPrice) {
-                    return house.year === year;
                 }
             }
 
 
             // property and price is not default
-            if (isDefault(country) && !isDefault(property) && !isDefault(price)&& isDefault(year)) {
+            if (isDefault(country) && !isDefault(property) && !isDefault(price)) {
                 if (housePrice >= minPrice && housePrice <= maxPrice) {
                     return house.type === property;
                 }
             }
-
-
 
         });
 
@@ -172,15 +131,9 @@ const HouseContextProvider = ({ children }) => {
                 setCountry,
                 countries,
 
-                year,
-                setYear,
-                years,
-
                 property,
                 setProperty,
                 properties,
-
-
                 price,
                 setPrice,
                 handleClick,

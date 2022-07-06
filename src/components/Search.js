@@ -10,6 +10,7 @@ import { HouseContext } from './HouseContext';
 
 // import icon
 import { RiSearch2Line } from 'react-icons/ri';
+import YearDropdown from './YearDropdown';
 
 const Search = () => {
   const { handleClick } = useContext(HouseContext);
@@ -19,7 +20,7 @@ const Search = () => {
       <CountryDropdown />
       <PropertyDropdown />
       <PriceRangeDropdown />
-      
+      <YearDropdown></YearDropdown>
 
       <button
         onClick={() => {

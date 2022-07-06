@@ -14,6 +14,13 @@ const House = ({ house }) => {
         <div className='bg-violet-500 rounded-full text-white px-3 inline-block'>
           {house.country}
         </div>
+
+        
+        <div className='bg-violet-500 rounded-full text-white px-3 inline-block'>
+          {house.year}
+        </div>
+
+
       </div>
       <div className='text-lg font-semibold text-violet-600 mb-4'>
         $ {house.price}/Month

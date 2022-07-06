@@ -14,8 +14,8 @@ const Header = () => {
     <header className='py-5 mb-12 border-b'>
       <div className='container mx-auto flex  justify-between items-center'>
         <Link to='/'>
-          <img  className='rounded-md' src={Logo} alt='' />
-       
+          <img className='rounded-md' src={Logo} alt='' />
+
         </Link>
 
 
@@ -26,7 +26,7 @@ const Header = () => {
           <Link className='mx-4 text-xl' to='/'>
             Buy
           </Link>
-          
+
           <Link className='mx-4 text-xl' to='/'>
             Sell
           </Link>
@@ -34,18 +34,13 @@ const Header = () => {
 
 
           <Link className='' to='/'>
-          
-          <div>
-           <Example></Example>
 
-          </div>
+            <div>
+              <Example></Example>
+
+            </div>
 
           </Link>
-
-          
-
-
-
         </div>
 
 
