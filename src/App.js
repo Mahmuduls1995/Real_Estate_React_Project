@@ -7,7 +7,10 @@ import Header from './components/Header';
 // import pages
 import Home from './pages/Home';
 import PropertyDetails from './pages/PropertyDetails';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 
+AOS.init();
 const App = () => {
   return (
     <div className='max-w-[1440px] mx-auto bg-white'>
